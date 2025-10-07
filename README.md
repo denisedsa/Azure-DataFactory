@@ -1,46 +1,152 @@
-# Github e Azure Devops para Versionamento e Backups
+# 🚀 Projeto: Github e Azure Devops para Versionamento e Backup com Azure DevOps
 
-🚀 Atividade do Bootcamp: GitHub e Azure DevOps para Versionamento e Backups
+Este repositório foi criado como parte do desafio **"GitHub e Azure DevOps para Versionamento e Backups"** da [DIO](https://www.dio.me/). Aqui você encontrará a aplicação prática dos conhecimentos sobre **Git, Azure Repos e Azure Pipelines**, simulando um fluxo real de desenvolvimento com controle de versão e automação.
 
-Este repositório contém a atividade prática que realizei como aluna do bootcamp "GitHub e Azure DevOps para Versionamento e Backups" promovido pela DIO.
- 
-## 🎯 Objetivo
-Demonstrar a criação de um Data Factory no Azure, sua conexão com um repositório GitHub, e a configuração de pipelines no Azure DevOps para versionamento e backup dos artefatos.
+---
 
-Módulo 5: Estratégias de Backup
+## 🎯 Objetivos
 
-•	✅ Tipos de backup: local, remoto, incremental
-•	✅ Backup de repositórios Git
-•	✅ Backup automatizado com Azure DevOps
+* Criar um repositório versionado com Git
+* Usar o Azure DevOps como plataforma de versionamento e integração contínua
+* Simular um fluxo de desenvolvimento com criação de branches e Pull Requests
+* Automatizar tarefas com pipeline (CI)
+* Registrar e documentar todo o processo como parte de um portfólio técnico
 
-<img width="2113" height="1" alt="image" src="https://github.com/user-attachments/assets/c01d72f8-7c4f-48c8-8929-8fe7072f3c22" />
+---
 
+## 🛠️ Tecnologias e Ferramentas
 
-🛠️ Tecnologias Utilizadas
+* Git
+* Azure DevOps (Repos e Pipelines)
+* Visual Studio Code
+* Terminal / Git Bash
+* Linguagem usada: HTML (exemplo base)
 
-<img width="781" height="238" alt="image" src="https://github.com/user-attachments/assets/8e6861ee-73b2-4ba3-b524-3bc09bf25590" />
- 
-<img width="2113" height="1" alt="image" src="https://github.com/user-attachments/assets/1b5f2bf9-43d0-42c9-8950-7d1225345ef9" />
+---
 
+## 📂 Estrutura Inicial
 
-📁 Estrutura do Repositório
+```
+projeto-versionamento/
+├── index.html
+└── README.md
+```
 
-<img width="886" height="355" alt="image" src="https://github.com/user-attachments/assets/4629866a-8bce-482a-a8f6-673e80055aee" />
- 
-<img width="2113" height="1" alt="image" src="https://github.com/user-attachments/assets/99d46dd5-1c79-41d9-8ae5-b27230309146" />
+---
 
-🧪 Resultado
-•	Repositório versionado com histórico completo
-•	Pipeline automatizado configurado no Azure DevOps
-•	Backup dos arquivos realizado com sucesso
+## 📌 Etapas da Atividade
 
-<img width="2113" height="1" alt="image" src="https://github.com/user-attachments/assets/b4612130-e5cb-4271-bd98-637c897c5e96" />
+### ✅ 1. Criar o projeto no Azure DevOps
 
+* Acesse: [https://dev.azure.com](https://dev.azure.com)
+* Crie um novo projeto com repositório Git
+
+### ✅ 2. Clonar o repositório localmente
+
+```bash
+git clone https://dev.azure.com/SEU_USUARIO/projeto-versionamento/_git/projeto-versionamento
+cd projeto-versionamento
+```
+
+### ✅ 3. Adicionar arquivos e versionar
+
+```bash
+echo "<h1>Projeto com Azure DevOps</h1>" > index.html
+git add .
+git commit -m "Adiciona arquivo HTML base"
+git push origin main
+```
+
+### ✅ 4. Criar branch de desenvolvimento
+
+```bash
+git checkout -b dev
+echo "<p>Alteração feita na branch dev.</p>" >> index.html
+git add .
+git commit -m "Adiciona parágrafo na branch dev"
+git push origin dev
+```
+
+### ✅ 5. Criar Pull Request via Azure DevOps
+
+* Acesse **Repos > Branches**
+* Clique em `dev > New Pull Request`
+* Faça o merge para a `main`
+
+### ✅ 6. Criar Azure Pipeline (CI)
+
+* Acesse **Pipelines > Create Pipeline**
+* Escolha o repositório
+* Use a configuração YAML abaixo:
+
+```yaml
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- script: echo "Pipeline executado com sucesso!"
+  displayName: 'Executar Script de Teste'
+```
+
+### ✅ 7. Validar execução do pipeline
+
+* Após merge na `main`, o pipeline será executado automaticamente
+* O log da execução ficará disponível na aba **Pipelines**
+
+---
+
+## 📸 Prints do Processo
+
+> ✅ **Inclua prints como estes no seu repositório:**
+
+1. Tela do Azure DevOps com o repositório criado
+2. Terminal com commits realizados
+3. Pull Request criada e mergeada
+4. Pipeline rodando automaticamente
+5. Resultado do pipeline com sucesso
+
+Você pode colocar esses prints em uma pasta `./prints` e linkar aqui com Markdown:
+
+```markdown
+![Tela do Repositório](./prints/repositorio.png)
+![Pipeline Executado](./prints/pipeline.png)
+```
+
+---
+
+## 💭 Insights e Aprendizados
+
+* Aprendi a estruturar um fluxo básico de versionamento usando Azure DevOps
+* Reforcei a importância de boas práticas com Git (commits, branches e PRs)
+* Compreendi como pipelines automatizados podem melhorar a entrega contínua (CI)
+* Entendi como o Azure DevOps pode ser uma alternativa robusta ao GitHub
+
+---
+
+## 🌱 Possibilidades de Evolução
+
+* Configurar deploy automático (CD) com Azure Web App ou GitHub Pages
+* Integrar testes automatizados no pipeline
+* Trabalhar com múltiplos ambientes (dev/stage/prod)
+* Espelhar repositório no GitHub como backup adicional
+
+---
+
+## 🧪 Como Executar o Projeto Localmente
+
+```bash
+git clone https://dev.azure.com/SEU_USUARIO/projeto-versionamento/_git/projeto-versionamento
+cd projeto-versionamento
+code .
+```
 
 📌 Aprendizados
 
 Este projeto me ajudou a entender na prática como aplicar versionamento e automações no ciclo de desenvolvimento. Aprendi a importância de manter um histórico limpo, trabalhar com branches e garantir a segurança dos dados com backups automatizados.
 
-<img width="2113" height="1" alt="image" src="https://github.com/user-attachments/assets/da269506-ed8c-438a-8494-65bc8a146afe" />
+```
 
 •	💼 https://www.linkedin.com/in/denise-almeida-6192a428/
